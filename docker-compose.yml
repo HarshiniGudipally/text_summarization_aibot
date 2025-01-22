@@ -1,0 +1,28 @@
+version: "3"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    command: ["uvicorn", "app:app", "--reload"]
+    networks:
+      - app-network
+    environment:
+      - BACKEND_URL=http://backend:8000 # To connect to backend service from frontend
+  frontend:
+    build: ./frontend
+    ports:
+      - "8501:8501"
+    command: ["streamlit", "run", "app.py"]
+    networks:
+      - app-network
+    depends_on:
+      - backend
+    environment:
+      - BACKEND_URL=http://backend:8000  # Ensure frontend knows where the backend is
+
+networks:
+  app-network:
+    driver: bridge
