@@ -7,7 +7,7 @@ st.title("AI Text Summarizer")
 
 text_input = st.text_area("Enter your text here:", height=200)
 length_option = st.selectbox("Select summary length:", ["short", "medium", "long"])
-method_option = st.selectbox("Select summarization method:", ["sumy", "huggingface", "openai"])
+method_option = st.selectbox("Select summarization method:", ["openai", "google-pegasus", "meta-bart"])
 
 if st.button("Summarize"):
     if text_input:
