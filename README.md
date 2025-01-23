@@ -37,8 +37,8 @@ text_summarization_ai/
 
 ### Clone the repository:
 ```sh
-git clone https://github.com/HarshiniGudipally/text_summarization_ai.git
-cd text_summarization_ai
+git clone https://github.com/HarshiniGudipally/text_summarization_aibot.git
+cd text_summarization_aibot
 ```
 
 ### Set up a virtual environment:
